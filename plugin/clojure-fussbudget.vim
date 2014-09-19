@@ -37,8 +37,8 @@ function! Fussbudget::align()
       let indentation_difference = (max_indentation + 2) - virtcol('.')
       if indentation_difference > 0
         execute "normal! " . indentation_difference . "i \<esc>"
-      elseif indentation_difference < 0
-        execute "normal! " . abs(indentation_difference) . "i\<bs>\<esc>"
+      elseif indentation_difference < -2
+        execute "normal! " . (abs(indentation_difference) - 2) . "i\<bs>\<esc>"
       endif
     endif
   endfor

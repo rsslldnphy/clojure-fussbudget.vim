@@ -7,5 +7,5 @@ Currently Fussbudget supports one command, Fussbudget::align(), which properly l
 Have the function run on entering a Clojure file by adding the below into you .vimrc:
 
 ```vimL
-  autocmd BufRead *.erl call Fussbudget::align()
+  autocmd BufRead *.clj call Fussbudget::align()
 ```
