@@ -30,7 +30,7 @@ function! Fussbudget::align()
       if delta > 0
         execute "normal! " . delta . "i\<space>\<esc>"
       elseif delta < 0
-        execute "normal! bel" . delta . "x"
+        execute "normal! bel" . abs(delta) . "x"
       endif
     endif
   endfor

@@ -23,4 +23,4 @@ Currently Fussbudget supports one command, `Fussbudget::align()`, which properly
 
 I have it mapped to `<leader>f` but the plugin itself defines no mappings so you can use whatever you like.
 
-This plugin is still in its very early stages and I'm by no means an expert, or even proficient, in Vimscript, so please let me know if you encounter any problems. There are a few special cases yet to be ironed out.
+This plugin is still in its very early stages and I'm by no means an expert, or even proficient, in Vimscript, so please let me know if you encounter any problems.
