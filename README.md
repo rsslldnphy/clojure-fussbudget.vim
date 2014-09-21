@@ -21,6 +21,11 @@ Currently Fussbudget supports one command, `Fussbudget::align()`, which properly
 ```
 
 
-I have it mapped to `<leader>f` but the plugin itself defines no mappings so you can use whatever you like.
+Fussbudget defines no mappings, so use whatever you want. I use the following so Fussbudget is run every time I indent the whole file:
+
+```map gg=G gg0=G :call Fussbudget::align()<CR>
+```
+
+BEWARE: The `0` in `gg0=G` is very important. Even though it doesn't do anything as you'll already be in this position, it differentiates the command from `gg=G` so you don't get stuck in an infinite loop. If anyone knows of a nicer way to achieve this mapping, please let me know!
 
 This plugin is still in its very early stages and I'm by no means an expert, or even proficient, in Vimscript, so please let me know if you encounter any problems.
