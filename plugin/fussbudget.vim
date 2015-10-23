@@ -22,7 +22,7 @@ function! s:required_indentation(starting_line, ending_line)
   return indentation + 2
 endfunction
 
-function! Fussbudget#align()
+function! Fussbudget()
   let ns_bounds     = s:find_ns_definition()
   let starting_line = ns_bounds[0]
   let ending_line   = ns_bounds[1]
