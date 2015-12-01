@@ -21,11 +21,15 @@ Currently Fussbudget supports one command, `Fussbudget::align()`, which properly
 ```
 
 
-Fussbudget defines no mappings, so use whatever you want. I use the following so Fussbudget is run every time I indent the whole file:
+Fussbudget defines no mappings, so use whatever you want. I use the following:
 
-```map gg=G gg0=G :call Fussbudget::align()<CR>
 ```
+function! CleanupWhitespace()
+  try
+    exec ':%s/\s\+$//g'
+  catch "E486: Pattern not found: \s\+$"
+  endtry
+endfunction
 
-BEWARE: The `0` in `gg0=G` is very important. Even though it doesn't do anything as you'll already be in this position, it differentiates the command from `gg=G` so you don't get stuck in an infinite loop. If anyone knows of a nicer way to achieve this mapping, please let me know!
-
-This plugin is still in its very early stages and I'm by no means an expert, or even proficient, in Vimscript, so please let me know if you encounter any problems.
+autocmd Filetype clojure map <leader>c :call CleanupWhitespace() \| :call Fussbudget()<CR>
+```
